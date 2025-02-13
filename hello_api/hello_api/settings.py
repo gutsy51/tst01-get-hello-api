@@ -137,7 +137,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization.
 LANGUAGE_CODE = 'ru-ru'
-TIME_ZONE = 'Moscow'
+TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
 
