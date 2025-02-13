@@ -59,8 +59,8 @@ LOGGING = {
 load_dotenv()
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-# Set debug mode.
-DEBUG = False
+# Set debug mode ON if not in production.
+DEBUG = 'RENDER' not in os.environ
 
 # Allowed hosts.
 ALLOWED_HOSTS = ['tst01-get-hello-api.onrender.com', '127.0.0.1']
