@@ -57,10 +57,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = 'RENDER' not in os.environ
 
 # Allowed hosts.
-ALLOWED_HOSTS = ['tst01-get-hello-api-udbs.onrender.com', ]  # Production host.
-if DEBUG:
-    ALLOWED_HOSTS.append('127.0.0.1')
-    ALLOWED_HOSTS.append('localhost')
+ALLOWED_HOSTS = [
+    'tst01-get-hello-api-udbs.onrender.com',  # Production host.
+    '127.0.0.1',
+    'localhost'
+]
 
 
 # Application definition.
@@ -90,7 +91,7 @@ ROOT_URLCONF = 'hello_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,7 +142,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images).
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 
 # Default primary key field type.
