@@ -57,7 +57,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = 'RENDER' not in os.environ
 
 # Allowed hosts.
-ALLOWED_HOSTS = ['tst01-get-hello-api.onrender.com', ]  # Production host.
+ALLOWED_HOSTS = ['tst01-get-hello-api-udbs.onrender.com', ]  # Production host.
 if DEBUG:
     ALLOWED_HOSTS.append('127.0.0.1')
     ALLOWED_HOSTS.append('localhost')
