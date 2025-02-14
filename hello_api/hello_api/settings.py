@@ -56,6 +56,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # Set debug mode ON if not in production.
 DEBUG = 'RENDER' not in os.environ
 
+
 # Allowed hosts.
 ALLOWED_HOSTS = [
     'tst01-get-hello-api-udbs.onrender.com',  # Production host.
@@ -77,6 +78,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Avoid turning off the static files on production.
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
